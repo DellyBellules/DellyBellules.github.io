@@ -6,6 +6,20 @@
   <title>Simsim - Accueil</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".section");
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, options);
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -28,22 +42,24 @@
     </div>
   </section>
 
-  <section id="apropos" class="section">
+  <section id="apropos" class="section fadein">
     <div class="content">
       <h2>À propos de moi</h2>
       <p>Je suis étudiant en psychologie sociale, passionné par le numérique, la cuisine, les transports et plein d’autres trucs. Ce site est mon espace perso, entre pro et créa.</p>
     </div>
   </section>
 
-  <section id="cv" class="section alt">
+  <section id="cv" class="section alt fadein">
     <div class="content">
       <h2>Mon CV</h2>
       <p>Mon parcours, mes compétences et mes expériences en un clin d'œil.</p>
       <a href="cv.html" class="button">📄 Accéder à mon CV</a>
+      <br><br>
+      <a href="cv.pdf" class="button" download>⬇️ Télécharger mon CV (PDF)</a>
     </div>
   </section>
 
-  <section id="etudes" class="section">
+  <section id="etudes" class="section fadein">
     <div class="content">
       <h2>Mes études</h2>
       <p>Envie d'en savoir plus sur mon parcours ?</p>
@@ -51,7 +67,7 @@
     </div>
   </section>
 
-  <section id="projets" class="section alt">
+  <section id="projets" class="section alt fadein">
     <div class="content">
       <h2>Mes projets</h2>
       <p>Je travaille sur plein de projets autour de la QVT, des RPS, de la psychologie appliquée et du web !</p>
@@ -59,11 +75,16 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section fadein">
     <div class="content">
       <h2>Me contacter</h2>
       <p>Une question, une idée, un café ?</p>
-      <a href="mailto:tonmail@example.com" class="button">📧 M’écrire</a>
+      <a href="mailto:simonperrochet@gmail.com" class="button">📧 M’écrire</a>
+      <div style="margin-top: 2rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
+        <p><strong>Email :</strong> simonperrochet@gmail.com</p>
+        <p><strong>Téléphone :</strong> 06 02 61 70 50</p>
+        <p><strong>Adresse :</strong> 22 rue Barbara Stirling, 49000 Angers</p>
+      </div>
     </div>
   </section>
 
