@@ -8,15 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll(".section");
-      const options = { threshold: 0.1 };
+      const sections = document.querySelectorAll(".fadein");
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
           }
         });
-      }, options);
+      }, { threshold: 0.1 });
       sections.forEach(section => observer.observe(section));
     });
   </script>
@@ -35,7 +34,7 @@
     </nav>
   </header>
 
-  <section id="accueil" class="section hero">
+  <section id="accueil" class="section hero fadein">
     <div class="content">
       <h1>Salut, moi c’est <span class="highlight">Simsim</span></h1>
       <p>Je passe le bonjour à Laura, car je suis trop fort et j’ai mon site à moi 😎</p>
