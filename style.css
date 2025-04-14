@@ -1,11 +1,21 @@
-/* === Global === */
+/* === Base === */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f5f0;
-  color: #222;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfaf6;
+  color: #2e2e2e;
   scroll-behavior: smooth;
+}
+
+h1, h2 {
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+  margin: 0.5rem 0 1.5rem;
 }
 
 /* === Header === */
@@ -13,8 +23,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: #fff8f2;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   z-index: 1000;
 }
 
@@ -22,80 +32,97 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: 0;
-}
-
-nav ul li {
-  margin: 0 1rem;
+  gap: 2rem;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #444;
+  color: #6e4f45;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #cc5500;
+  color: #b27863;
 }
 
 /* === Sections === */
 .section {
-  padding: 100px 20px;
-  max-width: 900px;
+  padding: 120px 20px 80px;
+  max-width: 960px;
   margin: 0 auto;
+  animation: fadeIn 1.2s ease both;
 }
 
 .alt {
-  background-color: #f1ede6;
-}
-
-h1, h2 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-p {
-  line-height: 1.6;
+  background-color: #f7f3ef;
+  border-radius: 24px;
+  padding: 80px 20px;
+  margin-top: 40px;
 }
 
 /* === Hero === */
 .hero {
-  padding-top: 140px;
+  padding-top: 160px;
   text-align: center;
 }
 
 .highlight {
-  color: #cc5500;
+  color: #d37258;
   font-weight: bold;
 }
 
 /* === Buttons === */
 .button {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 10px 20px;
-  background-color: #cc5500;
+  padding: 12px 24px;
+  background-color: #d37258;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-  background-color: #a64300;
+  background-color: #bb5a43;
+  transform: translateY(-2px);
 }
 
 /* === Footer === */
 footer {
   text-align: center;
-  padding: 30px;
-  background-color: #f1ede6;
+  padding: 40px 20px;
+  background-color: #f7f3ef;
   font-size: 0.9em;
-  color: #666;
-  margin-top: 40px;
+  color: #888;
+  margin-top: 60px;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 1rem;
+    font-size: 0.95em;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
