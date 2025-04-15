@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Metris Conseil</title>
+  <title>Metris Conseil - Psychologie du Travail</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    .fadein-form {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s ease;
-    }
-    .fadein-form.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-  
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Metris Conseil</div>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <div class="nav-left">
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+        </ul>
+      </div>
+
+      <div class="logo">
+        <img src="images/logo.png" alt="Metris Conseil">
+      </div>
+
+      <div class="nav-right">
+        <ul>
+          <li><a href="#experiences">Expériences</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
