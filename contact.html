@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Metris Conseil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Metris Conseil</div>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section fadein" style="padding-top: 160px;">
+    <div class="content">
+      <h2>Me contacter directement</h2>
+      <p>Vous pouvez m’écrire directement via ce formulaire. Je vous répondrai dans les plus brefs délais.</p>
+
+      <form action="mailto:simonperrochet@gmail.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto;">
+        <label>Nom :
+          <input type="text" name="nom" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        </label>
+
+        <label>Email :
+          <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        </label>
+
+        <label>Message :
+          <textarea name="message" rows="6" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+        </label>
+
+        <button type="submit" class="button" style="align-self: start;">📩 Envoyer le message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Metris Conseil – Simon Perrochet</p>
+  </footer>
+</body>
+</html>
