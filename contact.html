@@ -47,26 +47,38 @@
       <h2>Me contacter directement</h2>
       <p>Vous pouvez m’écrire directement via ce formulaire. Je vous répondrai dans les plus brefs délais.</p>
 
-      <form action="https://formspree.io/f/xzzewkrd" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto;">
-        <label>Nom :
-          <input type="text" name="nom" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-        </label>
+      <form action="https://formspree.io/f/xzzewkrd" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto;" onsubmit="showConfirmation(event)">
+  <label>Nom :
+    <input type="text" name="nom" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+  </label>
 
-        <label>Email :
-          <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-        </label>
+  <label>Email :
+    <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+  </label>
 
-        <label>Message :
-          <textarea name="message" rows="6" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-        </label>
+  <label>Message :
+    <textarea name="message" rows="6" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+  </label>
 
-        <button type="submit" class="button" style="align-self: start;">📩 Envoyer le message</button>
-      </form>
+  <button type="submit" class="button" style="align-self: start;">📩 Envoyer le message</button>
+</form>
+<div id="confirmation-message" style="display: none; background: #e6f9f0; border-left: 4px solid #2c7a7b; padding: 1.2rem 1.5rem; margin-top: 2rem; border-radius: 8px; font-size: 1rem;">
+  ✅ Merci pour votre message ! Je vous répondrai très bientôt. En attendant, n'hésitez pas à explorer le reste du site.
+</div>
+
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Metris Conseil – Simon Perrochet</p>
   </footer>
+<script>
+  function showConfirmation(event) {
+    event.preventDefault();
+    const form = event.target;
+    form.style.display = 'none';
+    document.getElementById('confirmation-message').style.display = 'block';
+  }
+</script>
 </body>
 </html>
