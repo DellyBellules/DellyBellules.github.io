@@ -17,19 +17,7 @@
       transform: translateY(0);
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const formBlock = document.querySelector(".fadein-form");
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, { threshold: 0.1 });
-      observer.observe(formBlock);
-    });
-  </script>
+  
 </head>
 <body>
   <header>
@@ -43,7 +31,7 @@
   </header>
 
   <section class="section fadein alt" style="padding-top: 160px; min-height: 100vh;">
-    <div class="content fadein-form">
+    <div class="content fadein-form visible">
       <h2>Me contacter directement</h2>
       <p>Vous pouvez m’écrire directement via ce formulaire. Je vous répondrai dans les plus brefs délais.</p>
 
@@ -69,7 +57,7 @@
     </div>
   </section>
 
- <footer>
+  <footer>
   <div style="text-align: center; padding: 40px 20px; font-size: 0.9em; color: #666;">
     <p><strong>Simon Perrochet – Metris Conseil</strong></p>
     <p>📧 simonperrochet@gmail.com – 📞 06 02 61 70 50 – 📍 22 rue Barbara Stirling, 49000 Angers</p>
