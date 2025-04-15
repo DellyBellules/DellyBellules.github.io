@@ -56,9 +56,14 @@ nav {
 }
 
 nav .logo {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #384d48;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .logo img {
+  height: 36px;
+  width: auto;
 }
 
 nav ul {
@@ -73,11 +78,13 @@ nav ul li a {
   text-decoration: none;
   color: #5b5b5b;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.2s ease;
 }
 
 nav ul li a:hover {
   color: #2c7a7b;
+  font-weight: 600;
+  transform: scale(1.05);
 }
 
 /* === Sections === */
@@ -152,4 +159,16 @@ footer {
     width: 100%;
     max-width: 280px;
   }
+}
+
+/* === Form animation === */
+.fadein-form {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.fadein-form.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
