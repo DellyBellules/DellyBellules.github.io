@@ -6,6 +6,30 @@
   <title>Contact - Metris Conseil</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .fadein-form {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+    .fadein-form.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const formBlock = document.querySelector(".fadein-form");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(formBlock);
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -19,27 +43,25 @@
   </header>
 
   <section class="section fadein alt" style="padding-top: 160px; min-height: 100vh;">
-
-    <div class="content">
+    <div class="content fadein-form">
       <h2>Me contacter directement</h2>
       <p>Vous pouvez m’écrire directement via ce formulaire. Je vous répondrai dans les plus brefs délais.</p>
 
-     <form action="https://formspree.io/f/xzzewkrd" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto;">
-  <label>Nom :
-    <input type="text" name="nom" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-  </label>
+      <form action="https://formspree.io/f/xzzewkrd" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto;">
+        <label>Nom :
+          <input type="text" name="nom" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        </label>
 
-  <label>Email :
-    <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-  </label>
+        <label>Email :
+          <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        </label>
 
-  <label>Message :
-    <textarea name="message" rows="6" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-  </label>
+        <label>Message :
+          <textarea name="message" rows="6" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+        </label>
 
-  <button type="submit" class="button" style="align-self: start;">📩 Envoyer le message</button>
-</form>
-
+        <button type="submit" class="button" style="align-self: start;">📩 Envoyer le message</button>
+      </form>
     </div>
   </section>
 
